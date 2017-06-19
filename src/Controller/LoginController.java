@@ -79,10 +79,10 @@ public class LoginController extends Application {
                 stage = new Stage();
                 Home home = new Home();
                 stage.setScene(new Scene(fxmlLoader.load()));
-                lstShowControl=dashBoard.lstShowControl();
-                hmapControl.put(role,lstShowControl);
+                //lstShowControl=dashBoard.lstShowControl();
+               // hmapControl.put(role,lstShowControl);
 
-                checkAuthorization(hmapControl);
+                //checkAuthorization(hmapControl);
                 stage.show();
                /* dashBoard=new DashBoard();*/
 
@@ -100,8 +100,8 @@ public class LoginController extends Application {
     }
     public void checkAuthorization(HashMap<String,List<Menu>>hmp){
         LoginAuthorizationProxy loginAuthorizationProxy=new LoginAuthorizationProxy();
-        loginAuthorizationProxy.hideAllControls(dashBoard.lstAllMenu());
-        loginAuthorizationProxy.authorizationCheck(hmp);
+       /* loginAuthorizationProxy.hideAllControls(dashBoard.lstAllMenu());
+        loginAuthorizationProxy.authorizationCheck(hmp);*/
 
     }
     public boolean checkAuthentication(String userName,String password){
@@ -126,7 +126,7 @@ public class LoginController extends Application {
     public void getConnection() {
         try {
             DbConnection.getCOnnection(DatabaseType.MySql, "localhost",
-                    3306, "appointmentsystem", "root", "root");
+                    3306, "das", "root", "1234");
             //Connection conn = DbConnection.dbConnectionObj.connect();
         } catch (SQLException e) {
             e.printStackTrace();
